@@ -11,6 +11,7 @@ battery_interpolation=(
 	"\#{battery_status_bg}"
 	"\#{battery_status_fg}"
 	"\#{battery_graph}"
+	"\#{battery_custom}"
 )
 battery_commands=(
 	"#($CURRENT_DIR/scripts/battery_percentage.sh)"
@@ -19,6 +20,7 @@ battery_commands=(
 	"#($CURRENT_DIR/scripts/battery_status_bg.sh)"
 	"#($CURRENT_DIR/scripts/battery_status_fg.sh)"
 	"#($CURRENT_DIR/scripts/battery_graph.sh)"
+	"#($CURRENT_DIR/scripts/battery_custom.sh)"
 )
 
 set_tmux_option() {

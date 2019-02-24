@@ -4,12 +4,12 @@ CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 source "$CURRENT_DIR/helpers.sh"
 
-color_full_charge_default=$(get_tmux_option "@batt_color_full_charge" "#[bg=green]")
-color_high_charge_default=$(get_tmux_option "@batt_color_high_charge" "#[bg=green]")
-color_medium_charge=$(get_tmux_option "@batt_color_medium_charge" "#[bg=yellow]")
-color_low_charge_default=$(get_tmux_option "@batt_color_low_charge" "#[bg=colour208]")
-color_warning_charge_default=$(get_tmux_option "@batt_color_warning_charge" "#[bg=red]")
-color_charging_default=$(get_tmux_option "@batt_color_charging" "#[bg=green]")
+color_full_charge_default=$(get_tmux_option "@batt_color_full_charge" "#[fg=green]")
+color_high_charge_default=$(get_tmux_option "@batt_color_high_charge" "#[fg=green]")
+color_medium_charge=$(get_tmux_option "@batt_color_medium_charge" "#[fg=yellow]")
+color_low_charge_default=$(get_tmux_option "@batt_color_low_charge" "#[fg=colour208]")
+color_warning_charge_default=$(get_tmux_option "@batt_color_warning_charge" "#[fg=red]")
+color_charging_default=$(get_tmux_option "@batt_color_charging" "#[fg=green]")
 
 color_full_charge=""
 color_high_charge=""
