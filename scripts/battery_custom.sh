@@ -44,22 +44,22 @@ print_battery_custom() {
     icon=`$CURRENT_DIR/battery_icon.sh`
     status=$($CURRENT_DIR/battery_icon.sh | sed -e 's/%//')
     if [ $status == 'charging' ]; then
-      echo "#[fg=$color_charging]$icon $percentage %  "
+      echo "#[fg=$color_charging]$icon  $percentage%"
     elif [ $percentage -eq 100 ]; then
-      echo "#[fg=$color_full_charge]$icon $percentage %  "
+      echo "#[fg=$color_full_charge]$icon  $percentage%"
     elif [ $percentage -le 99 -a $percentage -ge 76 ];then
-      echo "#[fg=$color_high_charge]$icon $percentage %  "
+      echo "#[fg=$color_high_charge]$icon  $percentage%"
     elif [ $percentage -le 75 -a $percentage -ge 31 ];then
-      echo "#[fg=$color_medium_charge]$icon $percentage %  "
+      echo "#[fg=$color_medium_charge]$icon  $percentage%"
     elif [ $percentage -le 30 -a $percentage -ge 11 ];then
-      echo "#[fg=$color_low_charge]$icon $percentage %  "
+      echo "#[fg=$color_low_charge]$icon  $percentage%"
     elif [ "$percentage" == "" ];then
-      echo "#[fg=$color_full_charge]$icon  "
+      echo "#[fg=$color_full_charge]$icon"
     else
-      echo \
-        "#[fg=$color_warning_charge,bg=$color_background,nobold]"\
-        "#[fg=$color_background,bg=$color_warning_charge,nobold]$icon  $percentage % "\
-        "#[fg=$color_warning_charge,bg=$color_background,nobold]'"
+      left_semicircle="#[fg=$color_warning_charge,bg=$color_background,nobold]"
+      middle="#[fg=white,bg=$color_warning_charge,nobold]$icon  $percentage%"
+      right_semicircle="#[fg=$color_warning_charge,bg=$color_background,nobold]"
+      echo "$left_semicircle$middle$right_semicircle"
     fi
 }
 
